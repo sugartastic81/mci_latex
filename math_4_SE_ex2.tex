@@ -1,0 +1,578 @@
+% !TEX encoding = UTF-8 Unicode
+\documentclass[10pt,ngerman]{scrartcl}
+\usepackage{url,bm,tikz,a4wide}
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs}
+\usepackage{amsmath,amssymb}
+\usepackage{qtree}
+\usepackage[ngerman]{babel}
+\usepackage{graphicx,tikzsymbols} 
+\usepackage{enumerate}
+\usepackage{polynom}
+\renewcommand{\theenumi}{\arabic{paragraph}.\alph{enumi}}
+\renewcommand{\theenumii}{\roman{enumii}}
+\renewcommand{\labelenumi}{\roman{enumi})}
+
+%SPEZIELLE KOMMENTARE FÜR LOGIK UND BERECHENBARKEIT
+\newcommand{\w }{\texttt{W}}
+\newcommand{\f }{\texttt{F}}
+
+\setcounter{secnumdepth}{-1}
+
+
+\begin{document}
+
+\begin{figure}[htbp]
+\begin{minipage}[b]{0.50\linewidth}
+\begin{Large}
+	
+%HIER PERSÖNLICHE DATEN EINTRAGEN
+	\textbf{Name:}\\
+	Zangerl 			\\
+	\textbf{Vorname:}\\
+	Jürgen 				\\
+	\textbf{Matrikelnummer:}\\
+	0216253
+	
+\end{Large}
+\end{minipage}
+\begin{minipage}[b]{0.50\linewidth}
+\begin{flushright}
+\begin{Huge}
+%% HIER LEHRVERANSTALTUNG EINGEBEN/EINKOMMENTIEREN
+\textbf{Mathematik für Software Engineering}\\
+%\textbf{Logik und \\Berechenbarkeit}\\
+%\textbf{Mathematik\\ und Statistik}\\
+\end{Huge}
+\vspace{10px}
+\begin{large}
+%% HIER SEMESTER EINGEBEN
+Sommersemester 2022
+\end{large}
+\end{flushright}
+\end{minipage}
+\end{figure}
+
+\vspace{20px}
+\begin{huge}
+\noindent
+
+%HIER NUMMER DES ÜBUNGSZETTELS EINTRAGEN
+\textbf{Übungsblatt 2}
+\end{huge}
+
+%HIER DIE JEWEILIGEN AUFGABENNUMMERN UND -NAMEN EINTRAGEN
+
+\begin{enumerate}[1.]
+	\item \textbf{Polynome}
+	
+	\begin{math} 
+P(x) = 2x^4-x^3-2x^2+2x-4 \newline Q(x) = 2x^4-3x^2+6 \newline R(x) = x^2-2
+	    \end{math}
+	    ~\newline~
+	\begin{enumerate}[(a)]
+	    \item \begin{math} 
+P(x) - Q(x) =\newline
+(2x^4-x^3-2x^2+2x-4) - (2x^4-3x^2+6) =\newline
+2x^4-x^3-2x^2+2x-4 - 2x^4+3x^2-6 =\newline
+-x^3-2x^2+2x-4+3x^2-6 =\newline
+-x^3-2x^2+3x^2+2x-4-6 =\newline
+~\newline
+-x^3-x^2+2x-10
+	    \end{math}
+	    
+	    ~\newline~
+	    \item \begin{math} 
+P(x) * Q(x) =\newline
+(2x^4-x^3-2x^2+2x-4) * (2x^4-3x^2+6) =\newline
+2x^4 * (2x^4-3x^2+6) - x^3 * (2x^4-3x^2+6) - 2x^2 * (2x^4-3x^2+6) +2x * (2x^4-3x^2+6) - 4 * (2x^4-3x^2+6) =\newline
+4x^8 - 6x^6 + 12x^4 - 2x^7 + 3x^5 - 6x^3 - 4x^6 + 6x^4 - 12x^2 + 4x^5 - 6x^3 + 12x - 8x^4 + 12x^2 - 24 =\newline
+4x^8 - 2x^7- 6x^6 - 4x^6 + 3x^5 + 4x^5 + 12x^4 - 8x^4 + 6x^4 - 6x^3 - 6x^3 - 12x^2 + 12x^2 + 12x - 24 =\newline
+~\newline
+4x^8 - 2x^7- 10x^6 + 7x^5 + 10x^4 - 12x^3 + 12x - 24 
+	    \end{math}
+	    
+	    ~\newline~
+	    
+% \polylongdiv[style=B]{2x^4 - x^3 - 2x^2 + 2x -4}{x^2-2}
+	    
+    \item \begin{math} 
+P(x) : R(x) =\end{math}\newline~\newline
+\begin{tabular}{ccccccc}
+    (\begin{math}2x^4\end{math} & \begin{math}-x^3\end{math} & \begin{math}-2x^2\end{math} & \begin{math}+2x\end{math} & \begin{math}-4\end{math}) & ~:~ (\begin{math}x^2-2\end{math}) & ~=~ \begin{math}2x^2 - x + 2\end{math} \\ 
+    \begin{math}-2x^4\end{math} & \begin{math}\pm 0\end{math} & \begin{math}+4x^2\end{math} & ~ & ~ & ~ & ~ \\ \toprule
+    ~ & \begin{math}-x^3\end{math} & \begin{math}+2x^2\end{math} & \begin{math}+2x\end{math} & ~ & ~ & ~ \\
+    ~ & \begin{math}+x^3\end{math} & \begin{math}\pm 0\end{math} & \begin{math}-2x\end{math} & ~ & ~ & ~ \\ \toprule
+    ~ & ~ & \begin{math}+2x^2\end{math} & \begin{math}+0\end{math} &  \begin{math}-4\end{math} & ~ & ~ \\
+    ~ & ~ & \begin{math}-2x^2\end{math} & ~ & \begin{math}+4\end{math} & ~ & ~ \\ \toprule
+    ~ & ~ & ~ & ~ & 0 & ~ & ~ 
+\end{tabular}
+\end{enumerate}
+	
+~\newpage
+	
+\item \textbf{Vektorarithmetik}
+	    ~\newline~
+	    
+	    \begin{math}v =	\begin{pmatrix}1 \\ 5\end{pmatrix}\end{math}; ~ \begin{math}w =	\begin{pmatrix}1 \\ 7\end{pmatrix};  ~  \lambda = 2; \end{math} 
+	    
+	\begin{enumerate}[(a)]
+	\item
+	
+\begin{tikzpicture}
+	%Raster zeichnen
+	\draw [color=gray!50]  [step=5mm] (-.5,-.5) grid (13.5,7.5);
+	% Achsen zeichnen
+	\draw[->,thick] (0,0) -- (13.5,0) node[right] {$x$};
+	\draw[->,thick] (0,0) -- (0,7.5) node[above] {$y$};
+	% Achsen beschriften
+	\foreach \x in {0}	\draw (\x,-.1) -- (\x,.1) node[below=4pt] {$0$};
+	\foreach \x in {5}	\draw (\x,-.1) -- (\x,.1) node[below=4pt] {$1$};
+	\foreach \x in {10}	\draw (\x,-.1) -- (\x,.1) node[below=4pt] {$2$};
+	\foreach \y in {0}	\draw (-.1,\y) -- (.1,\y) node[left=4pt] {$0$};
+	\foreach \y in {1}	\draw (-.1,\y) -- (.1,\y) node[left=4pt] {$2$};
+	\foreach \y in {2}	\draw (-.1,\y) -- (.1,\y) node[left=4pt] {$4$};
+	\foreach \y in {3}	\draw (-.1,\y) -- (.1,\y) node[left=4pt] {$6$};
+	\foreach \y in {4}	\draw (-.1,\y) -- (.1,\y) node[left=4pt] {$8$};
+	\foreach \y in {5}	\draw (-.1,\y) -- (.1,\y) node[left=4pt] {$10$};
+	\foreach \y in {6}	\draw (-.1,\y) -- (.1,\y) node[left=4pt] {$12$};
+	\foreach \y in {7}	\draw (-.1,\y) -- (.1,\y) node[left=4pt] {$14$};
+	% Vektoren zeichnen
+	\draw[->, line width=2pt] (0,0) -- +(5, 2.5)node[midway, sloped, below, green] {\(v\)} [green!50!black];
+	\node[below] at (5, 2.5){(1,5)};
+	\draw[->, line width=2pt] (0,0) -- +(5, 3.5)node[midway, sloped, above, blue] {\(w\)} [blue!50!black];
+	\node[above] at (5, 3.5){(1,7)};
+	\draw[->, dashed] (5, 2.5) -- +(5, 3.5)node[midway, sloped, below, blue] {\(w\)} [blue!50!black];
+	\draw[->, dashed] (5, 3.5) -- +(5, 2.5)node[midway, sloped, above, green] {\(v\)} [green!50!black];
+	\draw[->, line width=1pt] (0,0) -- +(10, 6)node[midway, sloped, below, orange] {\(a,b\)} [orange!50!black];
+    % Punkte beschriften
+	\node[below] at (10, 6){(2,12)};
+	\node[label={v,w}, name=vw] at (10,6){};
+\end{tikzpicture}
+		    ~\newline~
+	\item
+		    \begin{math}a = v + w = \begin{pmatrix}1 \\ 5\end{pmatrix} + \begin{pmatrix}1 \\ 7\end{pmatrix}= \begin{pmatrix}2 \\ 12\end{pmatrix}\end{math} \newline
+		    \begin{math}b = w + v = \begin{pmatrix}1 \\ 7\end{pmatrix} + \begin{pmatrix}1 \\ 5\end{pmatrix}= \begin{pmatrix}2 \\ 12\end{pmatrix}\end{math} \newline
+		    
+		    ~\newline~
+		    \newpage
+	\item
+		    \begin{math}\lambda v = \lambda * v = 2 * \begin{pmatrix}1 \\ 5\end{pmatrix}= \begin{pmatrix}2 \\ 10\end{pmatrix}\end{math} \newline
+		    \begin{math}\lambda w = \lambda * w = 2 * \begin{pmatrix}1 \\ 7\end{pmatrix}= \begin{pmatrix}2 \\ 14\end{pmatrix}\end{math} \newline
+		    \begin{math}\lambda a = \lambda * a = 2 * \begin{pmatrix}2 \\ 12\end{pmatrix}= \begin{pmatrix}4 \\ 24\end{pmatrix}\end{math} \newline
+		    \begin{math}\lambda b = \lambda * b = 2 * \begin{pmatrix}2 \\ 12\end{pmatrix}= \begin{pmatrix}4 \\ 24\end{pmatrix}\end{math} \newline
+\begin{tikzpicture}
+	%Raster zeichnen
+	\draw [color=gray!50]  [step=5mm] (-.5,-.5) grid (13.5,13.5);
+	% Achsen zeichnen
+	\draw[->,thick] (0,0) -- (13.5,0) node[right] {$x$};
+	\draw[->,thick] (0,0) -- (0,13.5) node[above] {$y$};
+	% Achsen beschriften
+	\foreach \x in {0}	\draw (\x,-.1) -- (\x,.1) node[below=4pt] {$0$};
+	\foreach \x in {3}	\draw (\x,-.1) -- (\x,.1) node[below=4pt] {$1$};
+	\foreach \x in {6}	\draw (\x,-.1) -- (\x,.1) node[below=4pt] {$2$};
+	\foreach \x in {9}	\draw (\x,-.1) -- (\x,.1) node[below=4pt] {$3$};
+	\foreach \x in {12}	\draw (\x,-.1) -- (\x,.1) node[below=4pt] {$4$};
+	\foreach \y in {0}	\draw (-.1,\y) -- (.1,\y) node[left=4pt] {$0$};
+	\foreach \y in {2}	\draw (-.1,\y) -- (.1,\y) node[left=4pt] {$4$};
+	\foreach \y in {4}	\draw (-.1,\y) -- (.1,\y) node[left=4pt] {$8$};
+	\foreach \y in {6}	\draw (-.1,\y) -- (.1,\y) node[left=4pt] {$12$};
+	\foreach \y in {8}	\draw (-.1,\y) -- (.1,\y) node[left=4pt] {$16$};
+	\foreach \y in {10}	\draw (-.1,\y) -- (.1,\y) node[left=4pt] {$20$};
+	\foreach \y in {12}	\draw (-.1,\y) -- (.1,\y) node[left=4pt] {$24$};
+	% Vektoren zeichnen
+	\draw[->, line width=2pt] (0,0) -- +(12, 12)node[midway, sloped, below, orange] {\(\lambda a, \lambda b\)} [orange!50!black];
+	\draw[->, line width=2pt] (0,0) -- +(6, 5)node[midway, sloped, below, blue] {\(\lambda v\)} [blue!50!black];
+	\draw[->, line width=2pt] (0,0) -- +(6, 7)node[midway, sloped, above, green] {\(\lambda w\)} [green!50!black];
+\end{tikzpicture}
+\end{enumerate}
+	
+~\newpage
+\item \textbf{Linearkombinationen}
+	    ~\newline~
+	    
+	    \begin{math}d =	\begin{pmatrix}-2 \\ -4 \\ 4\end{pmatrix}\end{math}; ~ 
+	    \begin{math}i =	\begin{pmatrix}-5 \\ 2 \\ 1\end{pmatrix}\end{math}; ~ 
+	    \begin{math}b =	\begin{pmatrix}-2 \\ 3 \\ -1\end{pmatrix}\end{math}; ~ 
+	    \begin{math}s =	\begin{pmatrix}-3 \\ 3 \\ 6\end{pmatrix}\end{math}; ~ 
+	    \begin{math}e =	\begin{pmatrix}-3 \\ 6 \\ -3\end{pmatrix}\end{math}; \newline
+	    \begin{math}E = L =	(\{\begin{pmatrix}-2 \\ -4 \\ 4\end{pmatrix},\begin{pmatrix}-5 \\ 2 \\ 1\end{pmatrix} \})\end{math}
+	    
+	    ~\newline~
+	    
+	\begin{enumerate}[(a)]
+	\item Fragestellung: \begin{math}\{b, s, e \} \in E\end{math} ~oder~ \begin{math}\{b, s, e \} \notin E \end{math}\newline
+	\begin{enumerate}
+	\item \begin{math}b \in E\end{math} ~oder~ \begin{math}b \notin E \end{math}\newline
+	 ~\newline
+	\begin{math}\begin{pmatrix}-2 \\ 3 \\ -1\end{pmatrix} = \lambda _1 \begin{pmatrix}-2 \\ -4 \\ 4\end{pmatrix} + \lambda _2\begin{pmatrix}-5 \\ 2 \\ 1\end{pmatrix} \end{math}\newline
+	 ~\newline~\newline
+	 1. Dimension umformen\newline
+	\begin{math}
+	-2 = \lambda _1 * (-2) + \lambda _2 * (-5) \newline
+	-2 = -2 \lambda _1  - 5 \lambda _2 \newline
+	2 \lambda _1 = -5 \lambda _2 + 2 \newline
+	\lambda _1 = \frac{-5}{2} \lambda _2 + 1
+	\end{math}
+	
+	in 2. Dimension einsetzen \newline
+	\begin{math}
+	3 = \lambda _1 * (-4) + \lambda _2 * (2) \newline
+	3 = (\frac{-5}{2} \lambda _2 + 1) * (-4) + \lambda _2 * (2) \newline
+	3 = \frac{20}{2} \lambda _2 - 4 + 2\lambda _2  \newline
+	3 = 10 \lambda _2 - 4 + 2\lambda _2  \newline
+	7 = 12 \lambda _2 \newline
+	\lambda _2 = \frac{7}{12} = \frac{14}{24} \newline
+	\lambda _1 = \frac{-5}{2} (\frac{7}{12}) + 1 = \frac{-35}{24} + 1  = \frac{-35}{24} + \frac{24}{24} = \frac{-11}{24}
+	\end{math}
+	
+	in 3. Dimension prüfen \newline
+	\begin{math}
+	-1 = \lambda _1 * (4) + \lambda _2 * (1) \newline
+	-1 =  \frac{-11}{24} * (4) + \frac{14}{24} * (1) \newline
+	-1 =  \frac{-44}{24} + \frac{14}{24} \newline
+	-1 =  -\frac{30}{24} \newline
+	-1 =  -\frac{5}{4} 
+	\end{math} ist ein Widerspruch, somit \begin{math}b \notin E \end{math}\newline
+	Der Vektor b ist nicht in der linearen Hülle E.
+	
+	~\newline~
+	
+	\item \begin{math}s \in E\end{math} ~oder~ \begin{math}s \notin E \end{math}\newline
+	 ~\newline
+	\begin{math}\begin{pmatrix}-3 \\ 3 \\ 6\end{pmatrix} = \lambda _1 \begin{pmatrix}-2 \\ -4 \\ 4\end{pmatrix} + \lambda _2\begin{pmatrix}-5 \\ 2 \\ 1\end{pmatrix} \end{math}\newline
+	 ~\newline~\newline
+	 1. Dimension umformen\newline
+	\begin{math}
+	-3 = \lambda _1 * (-2) + \lambda _2 * (-5) \newline
+	-3 = -2 \lambda _1  - 5 \lambda _2 \newline
+	2 \lambda _1 = -5 \lambda _2 + 3 \newline
+	\lambda _1 = \frac{-5}{2} \lambda _2 + \frac{3}{2}
+	\end{math}
+	
+	in 2. Dimension einsetzen \newline
+	\begin{math}
+	3 = \lambda _1 * (-4) + \lambda _2 * (2) \newline
+	3 = (\frac{-5}{2} \lambda _2 + \frac{3}{2}) * (-4) + \lambda _2 * (2) \newline
+	3 = \frac{20}{2} \lambda _2 - \frac{12}{2} + 2\lambda _2  \newline
+	\frac{6}{2} = 10 \lambda _2 - \frac{12}{2} + 2\lambda _2  \newline
+	\frac{18}{2} = 12 \lambda _2 \newline
+	9 = 12 \lambda _2 \newline
+	\lambda _2 = \frac{9}{12} = \frac{3}{4}\newline
+	\lambda _1 = \frac{-5}{2} \lambda _2 + \frac{3}{2} = \frac{-5}{2} (\frac{3}{4}) + \frac{3}{2} =
+	\frac{-15}{8} + \frac{12}{8} = \frac{-3}{8}
+	\end{math}
+	
+	in 3. Dimension prüfen \newline
+	\begin{math}
+	6 = \lambda _1 * (4) + \lambda _2 * (1) \newline
+	6 = \frac{-3}{8} * (4) + \frac{3}{4} * (1) \newline
+	6 = \frac{-12}{8} + \frac{6}{8} \newline
+	6 = \frac{-6}{8} \newline
+	6 = \frac{-3}{4} 
+	\end{math} ist ein Wiederspruch, somit \begin{math}s \notin E \end{math}\newline
+	Der Vektor s ist nicht in der linearen Hülle E.
+	
+	~\newline~
+	
+	\item \begin{math}e \in E\end{math} ~oder~ \begin{math}s \notin E \end{math}\newline
+	 ~\newline
+	\begin{math}\begin{pmatrix}-3 \\ 6 \\ -3\end{pmatrix} = \lambda _1 \begin{pmatrix}-2 \\ -4 \\ 4\end{pmatrix} + \lambda _2\begin{pmatrix}-5 \\ 2 \\ 1\end{pmatrix} \end{math}\newline
+	 ~\newline~\newline
+	 1. Dimension umformen\newline
+	\begin{math}
+	-3 = \lambda _1 * (-2) + \lambda _2 * (-5) \newline
+	-3 = -2 \lambda _1  - 5 \lambda _2 \newline
+	2 \lambda _1 = -5 \lambda _2 + 3 \newline
+	\lambda _1 = \frac{-5}{2} \lambda _2 + \frac{3}{2}
+	\end{math}
+	
+	in 2. Dimension einsetzen \newline
+	\begin{math}
+	6 = \lambda _1 * (-4) + \lambda _2 * (2) \newline
+	6 = (\frac{-5}{2} \lambda _2 + \frac{3}{2}) * (-4) + \lambda _2 * (2) \newline
+	6 = \frac{20}{2} \lambda _2 - \frac{12}{2} + 2\lambda _2  \newline
+	\frac{12}{2} = 10 \lambda _2 - \frac{12}{2} + 2\lambda _2  \newline
+	\frac{24}{2} = 12 \lambda _2 \newline
+	12 = 12 \lambda _2 \newline
+	\lambda _2 = 1\newline
+	\lambda _1 = \frac{-5}{2} \lambda _2 + \frac{3}{2} = \frac{-5}{2} * 1 + \frac{3}{2} = \frac{-2}{2} = -1
+	\end{math}
+	
+	in 3. Dimension prüfen \newline
+	\begin{math}
+	-3 = \lambda _1 * (4) + \lambda _2 * (1) \newline
+	-3 = -1 * (4) + 1 * (1) \newline
+	-3  = -4 + 1\newline
+	-3  = -3 
+	\end{math} ist korrekt, somit \begin{math}e \in E \end{math}\newline
+	Der Vektor e ist in der linearen Hülle E.
+	
+	\end{enumerate}
+	
+		~\newpage
+	
+	\item Koordinaten $\lambda _1$ und $\lambda _2$ der Linearkombination $\lambda _1 d + \lambda _2 i$ für e, da sich e in E befindet. Diese Koordinaten wurden in Aufgabe 3 (a) bereits berechnet. Hier nochmals die Überprüfung durch einsetzen in der Gleichung. \newline ~ \newline
+	\begin{math}e = \lambda _1 \begin{pmatrix}-2 \\ -4 \\ 4\end{pmatrix} + \lambda _2\begin{pmatrix}-5 \\ 2 \\ 1\end{pmatrix} \end{math} ~~~~~  $\lambda _ 1 = -1$ ~~~~~  $\lambda _ 2 = 1 $  ~~~~~  $e =	\begin{pmatrix}-3 \\ 6 \\ -3\end{pmatrix}$
+	\newline ~ \newline ~ \newline
+	\begin{math} \begin{pmatrix}-3 \\ 6 \\ -3\end{pmatrix} = -1 \begin{pmatrix}-2 \\ -4 \\ 4\end{pmatrix} + 1 \begin{pmatrix}-5 \\ 2 \\ 1\end{pmatrix} \newline
+	\begin{pmatrix}-3 \\ 6 \\ -3\end{pmatrix} = \begin{pmatrix}2 \\ 4 \\ -4\end{pmatrix} + \begin{pmatrix}-5 \\ 2 \\ 1\end{pmatrix} \newline
+		\begin{pmatrix}-3 \\ 6 \\ -3\end{pmatrix} = \begin{pmatrix}-3 \\ 6 \\ -3\end{pmatrix}\end{math} wahre Aussage. \newline 
+		~\newline
+		~\newline
+	\textbf{$\lambda _ 1$ = -1 und $\lambda _ 2$ = 1}
+	
+	~\newline~
+	
+		\item \begin{math}2,5 * d + (-4,5) * i = 2,5 * \begin{pmatrix}-2 \\ -4 \\ 4\end{pmatrix} + (-4,5) * \begin{pmatrix}-5 \\ 2 \\ 1\end{pmatrix} = 2,5 * \begin{pmatrix}-2 \\ -4 \\ 4\end{pmatrix} -4,5 * \begin{pmatrix}-5 \\ 2 \\ 1\end{pmatrix} = \newline
+		\begin{pmatrix}-5 \\ -10 \\ 10\end{pmatrix} - \begin{pmatrix}-22,5 \\ 9 \\ 4,5\end{pmatrix} = \begin{pmatrix}17,5 \\ -19 \\ 5,5\end{pmatrix}	\end{math}
+	\end{enumerate}
+	
+	~\newline~	
+	
+	
+\item \textbf{Lineare Unabhänigkeit}
+	    ~\newline~\newline
+	    Überprüfung auf lineare Unabhänigkeit von Vektoren.
+	    ~\newline~
+	    
+	\begin{enumerate}[(a)]
+	\item \begin{math}\{ ( \begin{pmatrix}-4 \\ -6\end{pmatrix},\begin{pmatrix}12 \\ 18\end{pmatrix} ) \}\end{math}
+	 \newline~\newline~\newline
+	\begin{math}\lambda _1 \begin{pmatrix}-4 \\ -6\end{pmatrix} + \lambda _2 \begin{pmatrix}12 \\ 18\end{pmatrix} = \begin{pmatrix}0 \\ 0\end{pmatrix} \end{math}\newline~\newline
+	1. Dimension umformen\newline
+	 \begin{math}
+	-4 \lambda _1 + 12 \lambda _2 = 0 \newline
+	4 \lambda _1 = 12 \lambda _2 \newline
+	\lambda _1 = \frac{12}{4} \lambda _2 = 3 \lambda _2 
+	\end{math}
+	\newline ~ \newline
+	in 2. Dimension einsetzen und prüfen\newline
+	\begin{math}
+	-6 (3 \lambda _2) + 18 \lambda _2 = 0  \newline
+	-18 \lambda _2 + 18 \lambda _2 = 0  \newline~\newline
+	0 = 0 \end{math} ~~~ wahre Aussage. Es existieren somit Lambdas, bei denen die Vektoren linear abhängig sind.\newline
+	\textbf{Ergebnis: Lineare Unabhängigkeit nicht erfüllt.}\newline~\newline
+	Beweis für die lineare Abhängigkeit der Vektoren bei $\lambda _1 = -3$\newline
+	\begin{math}
+	\lambda _1 *a = b\newline
+	-3 * \begin{pmatrix}-4 \\ -6\end{pmatrix} = \begin{pmatrix}12 \\ 18\end{pmatrix} \newline
+	\begin{pmatrix}12 \\ 18\end{pmatrix} = \begin{pmatrix}12 \\ 18\end{pmatrix} \newline \end{math}\newline
+	~\newline
+	~\newline
+	
+	\item \begin{math}\{ ( \begin{pmatrix}-3 \\ -8\end{pmatrix},\begin{pmatrix}-1 \\ -2\end{pmatrix} ) \}\end{math}
+	 \newline~\newline~\newline
+	\begin{math}\lambda _1 \begin{pmatrix}-3 \\ -8\end{pmatrix} + \lambda _2 \begin{pmatrix}-1 \\ -2\end{pmatrix} = \begin{pmatrix}0 \\ 0\end{pmatrix} \end{math} ~~~~ muss erfüllt sein für lineare Unabhängigkeit.\newline~\newline
+	1. Dimension umformen\newline
+	 \begin{math}
+	-3 \lambda _1 + (-1) \lambda _2 = 0 \newline
+	3 \lambda _1 = -1 \lambda _2 \newline
+	\lambda _1 = - \frac{1}{3} \lambda _2
+	\end{math}
+	\newline ~ \newline
+	in 2. Dimension einsetzen und prüfen\newline
+	\begin{math}
+	-8 * (- \frac{1}{3} \lambda _2) - 2 \lambda _2 = 0  \newline
+	\frac{8}{3} \lambda _2 = 2 \lambda _2  \newline
+	\frac{8}{3} = 2 \newline~\newline
+	\frac{8}{3} = \frac{6}{3} \end{math} ~~~ Widerspruch. Es existieren somit keine Lambdas, bei denen die Vektoren linear abhängig sind.\newline
+	\textbf{Ergebnis: Lineare Unabhängigkeit erfüllt.}\newline~\newline
+	
+	~\newline
+	
+	\item
+	\begin{math}\Bigl\{  \biggl ( \begin{pmatrix}-1 \\ ~~0 \\ ~~4\end{pmatrix} , \begin{pmatrix}-3 \\ -7 \\ ~~9\end{pmatrix} , \begin{pmatrix}~~7 \\ ~~2 \\ ~~6\end{pmatrix}\biggr ) \Bigr\} \end{math}
+	 \newline~\newline~\newline
+	\begin{math}\lambda _1\begin{pmatrix}-1 \\ ~~0 \\ ~~4\end{pmatrix} + \lambda _2 \begin{pmatrix}-3 \\ -7 \\ ~~9\end{pmatrix} + \lambda _3 \begin{pmatrix}~~7 \\ ~~2 \\ ~~6\end{pmatrix} = \begin{pmatrix}0 \\ 0 \\ 0\end{pmatrix} \end{math} ~~~~ muss erfüllt sein für lineare Unabhängigkeit.\newline~\newline
+	1. Dimension umformen\newline
+	 \begin{math}
+	-1 \lambda _1 - 3 \lambda _2 + 7 \lambda _3 = 0 \newline
+	\lambda _1 = -3 \lambda _2 + 7 \lambda _3 
+	\end{math}
+	\newline ~ \newline
+	2. Dimension umformen\newline
+	\begin{math}
+	0 \lambda _1 - 7 \lambda _2 + 2 \lambda _3 = 0 \newline
+    7 \lambda _2 = 2 \lambda _3 \newline
+    \lambda _2 = \frac{2}{7} \lambda _3 
+    \end{math}
+	\newline ~ \newline
+	Nun $\lambda _2 $ aus 2. Umformung in Gleichung zu $\lambda _1 $ aus 1. Umformung einsetzen\newline
+	\begin{math}
+	\lambda _1 = -3 \lambda _2 + 7 \lambda _3 ~~~~~~   \lambda _2 = \frac{2}{7} \lambda _3 \newline
+	\lambda _1 = -3 \left (\frac{2}{7} \lambda _3\right ) + 7 \lambda _3\newline
+	\lambda _1 = -\frac{6}{7} \lambda _3 + \frac{49}{7} \lambda _3\newline
+	\lambda _1 = \frac{43}{7} \lambda _3
+    \end{math}
+	\newline ~ \newline
+	in 3. Dimension einsetzen und prüfen\newline
+	\begin{math}
+	4 \lambda _1 + 9 \lambda _2 + 6 \lambda _3 = 0 \newline
+	4 \left(\frac{43}{7} \lambda _3\right) + 9 \left(\frac{2}{7} \lambda _3 \right) + 6 \lambda _3 = 0 \newline
+	\dfrac{172}{7} \lambda _3 + \dfrac{18}{7} \lambda _3 + \dfrac{42}{7} \lambda _3 = 0 \newline
+	\dfrac{190}{7} \lambda _3  = - \dfrac{42}{7} \lambda _3 \newline
+	~\newline
+	\dfrac{190}{7} = - \dfrac{42}{7} \end{math} ~~~ Widerspruch. Es existieren somit keine Lambdas, bei denen die Vektoren linear abhängig sind.\newline
+	\textbf{Ergebnis: Lineare Unabhängigkeit erfüllt.}\newline~\newline
+	
+	~\newline
+	
+	\item
+	\begin{math}\Bigl\{  \biggl ( \begin{pmatrix}-9 \\ ~~7 \\ -8\end{pmatrix} , \begin{pmatrix}~~6 \\ ~~7 \\ -5\end{pmatrix} , \begin{pmatrix}-3,75 \\ -8,75 \\ ~~7,00\end{pmatrix}\biggr ) \Bigr\} \end{math}
+	 \newline~\newline~\newline
+	\begin{math}\lambda _1\begin{pmatrix}-9 \\ ~~7 \\ -8\end{pmatrix} + \lambda _2 \begin{pmatrix}~~6 \\ ~~7 \\ -5\end{pmatrix} + \lambda _3 \begin{pmatrix}-3,75 \\ -8,75 \\ ~~7,00\end{pmatrix} = \begin{pmatrix}0 \\ 0 \\ 0\end{pmatrix} \end{math} \newline~\newline
+	1. Dimension umformen\newline
+	 \begin{math}
+	-9 \lambda _1 + 6 \lambda _2 - 3,75 \lambda _3 = 0 \newline
+	9 \lambda _1 = 6 \lambda _2 - 3,75 \lambda _3 \newline
+	\lambda _1 = \dfrac{6}{9} \lambda _2 - \dfrac{3,75}{9} \lambda _3 
+	\end{math}
+	\newline ~ \newline
+	2. Dimension umformen\newline
+	\begin{math}
+	7 \lambda _1 + 7 \lambda _2 - 8,75 \lambda _3 = 0 \newline
+	7 \left(\dfrac{6}{9} \lambda _2 - \dfrac{3,75}{9} \lambda _3 \right) + 7 \lambda _2 - 8,75 \lambda _3 = 0 \newline
+	\dfrac{7*6}{9} \lambda _2 - \dfrac{7*3,75}{9} \lambda _3 + \dfrac{7*9}{9} \lambda _2 - \dfrac{8,75*9}{9} \lambda _3 = 0\newline
+	\dfrac{7*6}{9} \lambda _2 + \dfrac{7*9}{9} \lambda _2 = \dfrac{7*3,75}{9} \lambda _3 + \dfrac{8,75*9}{9} \lambda _3 \newline
+	\dfrac{42}{9} \lambda _2 + \dfrac{63}{9} \lambda _2 = \dfrac{26,25}{9} \lambda _3 + \dfrac{78,75}{9} \lambda _3 \newline
+	\dfrac{105}{9} \lambda _2 = \dfrac{105}{9} \lambda _3 \newline
+	\lambda _2 = \lambda _3 
+    \end{math}
+	\newline ~ \newline
+	Nun $\lambda _2 $ aus 2. Umformung in Gleichung zu $\lambda _1 $ aus 1. Umformung einsetzen\newline
+	\begin{math}
+	\lambda _1 = \dfrac{6}{9} \lambda _2 - \dfrac{3,75}{9} \lambda _3 ~~~~~~   \lambda _2 = \lambda _3  \newline
+	\lambda _1 = \dfrac{6}{9} \lambda _3 - \dfrac{3,75}{9} \lambda _3 \newline
+	\lambda _1 = \dfrac{6-3,75}{9}  \lambda _3 \newline
+	\lambda _1 = \dfrac{2,25}{9}  \lambda _3 \newline
+	\lambda _1 = \dfrac{1}{4}  \lambda _3 
+    \end{math}
+	\newline ~ \newline
+	in 3. Dimension einsetzen und prüfen\newline
+	\begin{math}
+	-8 \lambda _1 - 5 \lambda _2 + 7 \lambda _3 = 0 \newline
+	-8 \left(\dfrac{1}{4}  \lambda _3\right) - 5 \lambda _3 + 7 \lambda _3 = 0 \newline
+	- \left(\dfrac{8}{4}  \lambda _3\right) - 5 \lambda _3 + 7 \lambda _3 = 0 \newline
+	- 2 \lambda _3 - 5 \lambda _3 + 7 \lambda _3 = 0 \newline
+	0 = 0 
+	\end{math}  ~~~ wahre Aussage. Es existieren somit Lambdas, bei denen die Vektoren linear abhängig sind.\newline
+	\textbf{Ergebnis: Lineare Unabhängigkeit nicht erfüllt.}\newline~\newline
+	$\lambda _1 = \frac{1}{4} \lambda _3$ umgeformt ergibt $\lambda _3 = 4 \lambda _1 = \lambda _2$ und somit eine lineare Abhängigkeit bei Faktor 4\newline
+	\begin{math}\lambda _1\begin{pmatrix}-9 \\ ~~7 \\ -8\end{pmatrix} + \lambda _2 \begin{pmatrix}~~6 \\ ~~7 \\ -5\end{pmatrix} + \lambda _3 \begin{pmatrix}-3,75 \\ -8,75 \\ ~~7,00\end{pmatrix} = \begin{pmatrix}0 \\ 0 \\ 0\end{pmatrix} \end{math}\newline
+	
+	\begin{math}\lambda _1 \begin{pmatrix}-9 \\ ~~7 \\ -8\end{pmatrix} = - 4*\lambda _1 \begin{pmatrix}~~6 \\ ~~7 \\ -5\end{pmatrix} - 4*\lambda _1 \begin{pmatrix}-3,75 \\ -8,75 \\ ~~7,00\end{pmatrix}\end{math}\newline
+	
+	\begin{math}\lambda _1 \begin{pmatrix}-9 \\ ~~7 \\ -8\end{pmatrix} = - 4*\lambda _1 \begin{pmatrix}~~6-3,75 \\ ~~7-8,75 \\ -5+7,00\end{pmatrix} ~ / :\lambda _ 1\end{math}\newline
+	
+	\begin{math}\begin{pmatrix}-9 \\ ~~7 \\ -8\end{pmatrix} = - 4 \begin{pmatrix}~~6-3,75 \\ ~~7-8,75 \\ -5+7,00\end{pmatrix}\end{math}\newline
+	
+	\begin{math}\begin{pmatrix}-9 \\ ~~7 \\ -8\end{pmatrix} = - 4 \begin{pmatrix}~~2,25 \\ -1,75 \\ ~~2,00\end{pmatrix}\end{math}\newline
+	
+	\begin{math}\begin{pmatrix}-9 \\ ~~7 \\ -8\end{pmatrix} = \begin{pmatrix}-9 \\ ~~7 \\ -8\end{pmatrix}\end{math}\newline
+	
+	\end{enumerate}
+	
+	~\newline~	
+	
+	
+\item \textbf{Matrizenoperationen}
+	    ~\newline~\newline
+	    Überprüfung auf lineare Unabhänigkeit von Vektoren.
+	    ~\newline~
+	    
+	\begin{math}
+	A = \begin{pmatrix}-5 & 10 & -3 \\ -9 & -9 & -6 \\ 9 & -5 & -10 \\ -8 & -1 & 6\end{pmatrix}, ~~
+	B = \begin{pmatrix}-7 & 6 & -4 \\ -10 & -7 & -8 \\ 6 & 2 & -8 \\ 5 & -4 & -5\end{pmatrix}, ~~
+	C = \begin{pmatrix}-1 & 10 & 6 & 10 \\ 7 & 8 & 1 & 0 \\ 2 & 5 & -2 & 5 \end{pmatrix}
+	\end{math}
+	
+	 ~\newline~\newline
+	 
+	\begin{enumerate}[(a)]
+	\item \textbf{A+B}\newline
+	~\newline
+	\begin{math}
+	\begin{pmatrix}-5 & 10 & -3 \\ -9 & -9 & -6 \\ 9 & -5 & -10 \\ -8 & -1 & 6\end{pmatrix} + 
+	\begin{pmatrix}-7 & 6 & -4 \\ -10 & -7 & -8 \\ 6 & 2 & -8 \\ 5 & -4 & -5\end{pmatrix} = 
+	\begin{pmatrix}-12 & 16 & -7 \\ -19 & -16 & -14 \\ 15 & -3 & -18 \\ -3 & -5 & 1\end{pmatrix}
+	\end{math}
+	
+	 ~\newline~\newline
+	 
+	\item \textbf{A-C}\newline
+	~\newline
+	Für die Subtraktion der Matrizen muss die Anzahl der Spalten und Zeilen von A gleich der Anzahl der Spalten und Zeilen von C sein. A hat 3 Spalten und 4 Zeilen, C hat 4 Spalten und 3 Zeilen, somit ist keine Subtraktion möglich.
+	
+	 ~\newline~\newline
+	 
+	\item \textbf{-2,25 * A}\newline
+	~\newline
+	\begin{math}
+	-2,25 * \begin{pmatrix}-5 & 10 & -3 \\ -9 & -9 & -6 \\ 9 & -5 & -10 \\ -8 & -1 & 6\end{pmatrix} = 
+	\begin{pmatrix}11,25 & -22,5 & 6,75 \\ 20,25 & 20,25 & 13,5 \\-20,25 & 11,25 & 22,5 \\ 18 & 2,25 & -13,5\end{pmatrix}
+	\end{math}
+	 \newline~\newline
+	 
+	\item \textbf{A*B}\newline
+	~\newline
+	Für die Multiplikation der Matrizen muss die Anzahl der Spalten von A gleich der Anzahl der Zeilen von B sein. A hat 3 Spalten und B hat 4 Zeilen, somit ist keine Multiplikation möglich.
+	
+	 ~\newline~\newline
+	 
+	\item \textbf{C*B}\newline
+	~\newline
+	\begin{math}
+	\begin{pmatrix}-1 & 10 & 6 & 10 \\ 7 & 8 & 1 & 0 \\ 2 & 5 & -2 & 5 \end{pmatrix} * 
+	\begin{pmatrix}-7 & 6 & -4 \\ -10 & -7 & -8 \\ 6 & 2 & -8 \\ 5 & -4 & -5\end{pmatrix} 
+	\end{math}
+	\newline~\newline~\newline
+	\begin{tabular}{cccc|cccccc}
+    ~ & ~ & ~ & ~ &         -7 & 6 & -4 \\ 
+    ~ & ~ & ~ & ~ &         -10 & -7 & -8 \\ 
+    ~ & ~ & ~ & ~ &         6 & 2 & -8 \\ 
+    ~ & ~ & ~ & ~ &         5 & -4 & -5 \\ \toprule
+    -1 & 10 & 6 & 10 &      1*7-10*10+6*6+10*5 & -1*6-10*7+6*2-10*4 & 1*4-10*8-6*8-10*5 \\
+    7 & 8 & 1 & 0 &         -7*7-8*10+1*6+0*5 & 7*6-8*7+1*2-0*4 & -7*4-8*8-1*8-0*5  \\
+    2 & 5 & -2 & 5 &        -2*7-5*10-2*6+5*5 & 2*6-5*7-2*2-5*4 & -2*4-5*8+2*8-5*5 
+    \end{tabular}
+	\newline~\newline~\newline
+	\begin{tabular}{cccc|cccccc}
+    ~ & ~ & ~ & ~ &         -7 & 6 & -4 \\ 
+    ~ & ~ & ~ & ~ &         -10 & -7 & -8 \\ 
+    ~ & ~ & ~ & ~ &         6 & 2 & -8 \\ 
+    ~ & ~ & ~ & ~ &         5 & -4 & -5 \\ \toprule
+    -1 & 10 & 6 & 10 &      -7 & -104 & -174 \\
+    7 & 8 & 1 & 0 &         -123 & -12 & -100  \\
+    2 & 5 & -2 & 5 &        -51 & -47 & -57
+    \end{tabular}
+	\newline~\newline~\newline
+	\begin{math}
+	\begin{pmatrix}-1 & 10 & 6 & 10 \\ 7 & 8 & 1 & 0 \\ 2 & 5 & -2 & 5 \end{pmatrix} * 
+	\begin{pmatrix}-7 & 6 & -4 \\ -10 & -7 & -8 \\ 6 & 2 & -8 \\ 5 & -4 & -5\end{pmatrix} = 
+	\begin{pmatrix}-7 & -104 & -174 \\ -123 & -12 & -100 \\ -51 & -47 & -57\end{pmatrix}
+	\end{math}
+	\end{enumerate}
+	~\newline~\newline
+	
+	
+	\item \textbf{Theorieaufgabe}
+	\newline
+	\begin{enumerate}[(a)]
+	    \item Welche Gemeinsamkeit besteht zwischen der linearen Hülle einer Menge von Vektoren und Gruppen bezüglich der Bedingung Abgeschlossenheit (ABG)? \newline
+	    ~\newline
+	    Die lineare Hülle gibt die Menge aller Linearkombinationen mit einer Menge von Vektoren an. Diese Vektoren spannen den Vektorraum auf und sie bilden auch den kleinsten Untervektorraum. Die Abschlossenheit gilt für diese Vektoren für Addition, Subtraktion und Mutliplikation, was bedeutet, dass die Lösung aus diesen Rechenoperationen mit Vektoren ebenfalls wieder Menge der linearen Hülle ist.\newline
+	    Die Abgeschlosenheit  unterscheidet einen Untervektorraum  von einer beliebigen Teilmenge eines Vektorraums. Das bedeutet, dass man aus dem Untervektorraum durch Addition von Vektoren und Multiplikation nicht ausbricht, also immer wieder ein Vektor des Untervektorraums entsteht.\newline
+	    ~\newline
+	    \item Wann ist eine Menge von Vektoren eine Basis eines Vektorraums?\newline
+	    ~\newline
+	    Die Menge aller Linearkombinationen von n \textbf{linear unabhängigen} Vektoren erzeugt einen Vektorraum der Dimension n. Diese Vektoren bilden dann die Basis des Vektorraums, d.h. sie spannen ihn durch ihre Linearkombinationen auf. Anders gesagt muss diese Menge das Erzeugendensystem des Vektorraums sein, was beutet dass die lineare Hülle dieser Menge den gesamten Vektorraum ergibt. 
+	\end{enumerate}
+	
+
+\end{enumerate}
+
+\vfill
+
+\end{document}
+
